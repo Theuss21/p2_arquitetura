@@ -16,3 +16,12 @@ A aplicação foi dividida em dois **Microsserviços** totalmente desacoplados c
 Na raiz do projeto, execute o comando:
 ```bash
 docker-compose up --build
+
+## 🌐 Links do Projeto em Produção (Render)
+
+O ecossistema de microsserviços foi totalmente buildado e implantado em produção na nuvem através do Render. Você pode acessar os endpoints de monitoramento (*Health Check*) diretamente nos links abaixo:
+
+* **Microsserviço de Checkout:** [https://checkout-service-p2-arq.onrender.com/](https://checkout-service-p2-arq.onrender.com/)
+* **Microsserviço de Notificação:** [https://notification-service-p2-arq.onrender.com/](https://notification-service-p2-arq.onrender.com/)
+
+> 💡 **Nota de Teste:** As rotas raiz (`/`) devolvem apenas o status do serviço em JSON para indicar que a infraestrutura está online. Para testar o fluxo de negócio completo (comunicação ponta a ponta), envie uma requisição `POST` para o endpoint `/checkout`.

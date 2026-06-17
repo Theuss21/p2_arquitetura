@@ -14,7 +14,7 @@ class HttpNotificationObserver {
     
     // Aqui usamos o fetch nativo do Node para disparar para o microsserviço de notificações
     // A URL usará o nome do container do docker que definiremos adiante
-    const notificationServiceUrl = process.env.NOTIFICATION_SERVICE_URL || 'http://localhost:3001/notify';
+    const notificationServiceUrl = process.env.NOTIFICATION_SERVICE_URL || 'https://notification-service-p2-arq.onrender.com/notify';
     
     fetch(notificationServiceUrl, {
       method: 'POST',

@@ -16,6 +16,7 @@ A aplicação foi dividida em dois **Microsserviços** totalmente desacoplados c
 Na raiz do projeto, execute o comando:
 ```bash
 docker-compose up --build
+```
 
 ## 🌐 Links do Projeto em Produção (Render)
 

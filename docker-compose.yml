@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  checkout-service:
+    build:
+      context: ./checkout-service
+      dockerfile: Dockerfile
+    container_name: checkout-service-container
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - NOTIFICATION_SERVICE_URL=http://notification-service:3001/notify
+    depends_on:
+      - notification-service
+    networks:
+      - ecommerce-network
+
+  notification-service:
+    build:
+      context: ./notification-service
+      dockerfile: Dockerfile
+    container_name: notification-service-container
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+    networks:
+      - ecommerce-network
+
+networks:
+  ecommerce-network:
+    driver: bridge

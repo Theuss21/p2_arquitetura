@@ -7,6 +7,9 @@
     "test": "jest --runInBand",
     "start": "node src/infrastructure/webserver/express.js"
   },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
   "devDependencies": {
     "jest": "^29.7.0"
   }
